@@ -24,28 +24,44 @@
             padding: 0;
         }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000; 
+        header {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .navbar-brand {
+        header .logo {
+            font-size: 1.5em;
             font-weight: bold;
-            font-size: 1.05rem;
         }
 
-        .navbar-toggler {
-            border: none;
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
         }
 
-        .navbar-toggler-icon {
-            background-color: var(--text-color-light);
+        header nav ul li {
+            margin: 0 15px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--text-color-dark);
+            font-size: 1.1em;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header .settings {
+            cursor: pointer;
         }
 
         .container {
@@ -128,31 +144,18 @@
     </style>
 </head>
 <body>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">CV</a>
-                    </li>
-                </ul>
-                <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <div class="logo">Benjamin O. Harrison</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="settings" onclick="toggleBackground()">⚙️</div>
+    </header>
     <div class="container">
         <div class="bio">
             <h2>Biography</h2>
