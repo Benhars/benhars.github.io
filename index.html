@@ -6,12 +6,14 @@
     <title>About - Benjamin O. Harrison</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> 
     <style>
         :root {
-            --bg-color-dark: ##1d1d20; /* Dark grey background */
+            --bg-color-dark: #1a1a1a; /* Dark grey background */
             --bg-color-light: #ffffff; /* White background */
             --text-color-dark: #ffffff; /* White text color */
             --text-color-light: #000000; /* Black text color */
+            --highlight-color: #007bff; /* Highlight color for hover effects */
         }
 
         body {
@@ -59,10 +61,12 @@
 
         .social-media-logo {
             transition: transform 0.3s;
+            filter: grayscale(100%);
         }
 
         .social-media-logo:hover {
             transform: scale(1.5);
+            filter: grayscale(100%);
         }
 
         .social-media-caption {
@@ -126,6 +130,7 @@
         .address {
             margin-top: 20px;
             text-align: center;
+            font-family: 'Open Sans', sans-serif;
         }
 
         footer {
