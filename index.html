@@ -65,17 +65,19 @@
         }
 
         .container {
-             display: flex;
+            display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             padding: 20px;
             min-height: calc(100vh - 60px);
+            flex-wrap: wrap; /* Ensures content wraps on smaller screens */
         }
 
         .bio {
             max-width: 600px;
             margin-right: 20px;
+            flex: 1; /* Allows the bio section to take available space */
         }
 
         .bio h2 {
@@ -104,6 +106,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            flex: 1; /* Allows the profile section to take available space */
         }
 
         .profile-pic {
@@ -117,16 +120,26 @@
             text-align: center;
         }
 
-        .social-icons {
-            margin-top: 10px;
-            text-align: center;
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem; /* Increased margin for more space above the icons */
+            gap: 1rem; /* Added gap for spacing between icons */
         }
 
-        .social-icons a {
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.5em;
-            color: var(--text-color-dark);
+        .social-media-logo {
+            transition: transform 0.3s;
+        }
+
+        .social-media-logo:hover {
+            transform: scale(1.5);
+        }
+
+        .social-media-caption {
+            font-size: 0.85rem;
+            color: #333;
+            text-align: center;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -161,11 +174,31 @@
                 1516 Clifton Road, NE<br>
                 Atlanta, GA 30322
             </div>
-            <div class="social-icons">
-                <a href="mailto:benjamin.harrison@emory.edu" title="E-mail Me"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/benhars" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/benhars/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/ben_hars?igsh=MTU3anp4NWhxMm42cA%3D%3D&utm_source=qr" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="social-media">
+                <div>
+                    <a href="https://www.linkedin.com/in/benhars/" target="_blank">
+                        <img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo">
+                    </a>
+                    <p class="social-media-caption">LinkedIn</p>
+                </div>
+                <div>
+                    <a href="https://github.com/benhars" target="_blank">
+                        <img src="images/github_logo.png" alt="GitHub" width="30" height="30" class="social-media-logo">
+                    </a>
+                    <p class="social-media-caption">GitHub</p>
+                </div>
+                <div>
+                    <a href="mailto:benjamin.harrison@emory.edu" target="_blank">
+                        <img src="images/email_logo.png" alt="Email" width="30" height="30" class="social-media-logo">
+                    </a>
+                    <p class="social-media-caption">Email</p>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/ben_hars/" target="_blank">
+                        <img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo">
+                    </a>
+                    <p class="social-media-caption">Instagram</p>
+                </div>
             </div>
         </div>
     </div>
