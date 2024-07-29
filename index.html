@@ -7,14 +7,15 @@
     <style>
         :root {
             --bg-color-dark: #2c2c2e; /* Dark grey background */
-            --bg-color-forest: #228b22; /* Forest green background */
-            --text-color: #ffffff; /* White text color */
+            --bg-color-light: #ffffff; /* White background */
+            --text-color-dark: #ffffff; /* White text color */
+            --text-color-light: #000000; /* Black text color */
         }
 
         body {
             font-family: Arial, sans-serif;
             background-color: var(--bg-color-dark);
-            color: var(--text-color);
+            color: var(--text-color-dark);
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
@@ -22,7 +23,7 @@
 
         header {
             background-color: var(--bg-color-dark);
-            color: var(--text-color);
+            color: var(--text-color-dark);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,7 +49,7 @@
 
         header nav ul li a {
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--text-color-dark);
             font-size: 1.1em;
         }
 
@@ -62,14 +63,14 @@
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
             padding: 20px;
         }
 
         .bio {
             max-width: 600px;
-            text-align: center;
+            margin-right: 20px;
         }
 
         .bio h2 {
@@ -82,12 +83,22 @@
             line-height: 1.6;
         }
 
+        .bio ul {
+            list-style-type: disc;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .bio ul li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
         .profile-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-top: 20px;
         }
 
         .profile-pic {
@@ -110,39 +121,7 @@
             text-decoration: none;
             margin: 0 10px;
             font-size: 1.5em;
-            color: var(--text-color);
-        }
-
-        .education-interests {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .education, .interests {
-            width: 45%;
-        }
-
-        .education h3, .interests h3 {
-            font-size: 1.8em;
-            border-bottom: 2px solid var(--text-color);
-            padding-bottom: 0.3em;
-        }
-
-        .education-item, .interest-item {
-            margin-top: 20px;
-        }
-
-        .education-item h4, .interest-item h4 {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-        }
-
-        .education-item h4 i, .interest-item h4 i {
-            margin-right: 10px;
+            color: var(--text-color-dark);
         }
     </style>
 </head>
@@ -163,6 +142,11 @@
         <div class="bio">
             <h2>Biography</h2>
             <p>Benjamin is a second-year PhD in Economics at Emory University, specializing in time series models, Bayesian econometrics, causal inference, and machine learning. His diverse research interests position him at the forefront of innovative economic research.</p>
+            <ul>
+                <li>Econometrics</li>
+                <li>Bayesian Econometrics</li>
+                <li>Causal Inference</li>
+            </ul>
         </div>
         <div class="profile-section">
             <img src="images/me.jpg" alt="Benjamin Harrison" class="profile-pic">
@@ -178,40 +162,6 @@
                 <a href="https://www.instagram.com/ben_hars?igsh=MTU3anp4NWhxMm42cA%3D%3D&utm_source=qr" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="education-interests">
-            <div class="education">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <h4><i class="fas fa-graduation-cap"></i> PhD Economics</h4>
-                    <p>Emory University</p>
-                    <p>2023-08-07 - 2028-05-01</p>
-                </div>
-                <div class="education-item">
-                    <h4><i class="fas fa-graduation-cap"></i> Quantitative Economics</h4>
-                    <p>Ca'Foscari University</p>
-                    <p>2021-09-01 - 2023-07-12</p>
-                    <p>GPA: 30/30 cum laude</p>
-                </div>
-                <div class="education-item">
-                    <h4><i class="fas fa-graduation-cap"></i> BA Economics and Mathematics</h4>
-                    <p>University of Ghana</p>
-                    <p>2016-09-01 - 2020-10-01</p>
-                    <p>GPA: 3.75/4.0</p>
-                </div>
-            </div>
-            <div class="interests">
-                <h3>Interests</h3>
-                <div class="interest-item">
-                    <h4><i class="fas fa-star"></i> Econometrics</h4>
-                </div>
-                <div class="interest-item">
-                    <h4><i class="fas fa-star"></i> Bayesian Models</h4>
-                </div>
-                <div class="interest-item">
-                    <h4><i class="fas fa-star"></i> Causal Inference</h4>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -219,8 +169,15 @@
         function toggleBackground() {
             const root = document.documentElement;
             const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
-            const newBgColor = currentBgColor === '#2c2c2e' ? '#228b22' : '#2c2c2e';
-            root.style.setProperty('--bg-color-dark', newBgColor);
+            if (currentBgColor === '#2c2c2e') {
+                root.style.setProperty('--bg-color-dark', '#ffffff');
+                root.style.setProperty('--text-color-dark', '#000000');
+            } else {
+                root.style.setProperty('--bg-color-dark', '#2c2c2e');
+                root.style.setProperty('--text-color-dark', '#ffffff');
+            }
+            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
+            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
         }
     </script>
 </body>
