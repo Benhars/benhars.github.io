@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Benjamin O. Harrison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Garamond:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-dark: #1a1a1a; /* Dark background */
+            --bg-color-light: #ffffff; /* White background */
+            --text-color-dark: #ffffff; /* White text color */
+            --text-color-light: #000000; /* Black text color */
+            --highlight-color: #007bff; /* Highlight color for hover effects */
+        }
 
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+            font-size: 12px; /* Increased base font size */
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.05rem;
+            font-family: 'Garamond', serif;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-color: var(--text-color-light);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-color-dark) !important;
+            font-size: 1.1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem; /* Increased margin for more space above the icons */
+            gap: 1rem; /* Added gap for spacing between icons */
+        }
+
+        .social-media-logo {
+            transition: transform 0.3s;
+            filter: grayscale(100%);
+        }
+
+        .social-media-logo:hover {
+            transform: scale(1.5);
+            filter: grayscale(100%);
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            min-height: calc(100vh - 60px);
+            flex-wrap: wrap;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin-right: 18px;
+            flex: 1;
+        }
+
+        .bio h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .bio p {
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+
+        .bio ul {
+            list-style-type: disc;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .bio ul li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .address {
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Garamond', serif;
+            font-size: 1.2em;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+        }
+
+        .very-small-text {
+            font-size: 0.85rem;
+            color: #666;
+            font-family: 'Garamond', serif;
+        }
+        .small-text {
+            font-size: 1.2rem;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            color: var(--text-color-light);
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        .mode-toggle:hover {
+            color: var(--text-color-dark);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="bio">
+            <h3>Benjamin Owusu Harrison</h3>
+            <p class = "text-justify small-text">I am a second-year PhD in Economics at <a href="https://economics.emory.edu/people/grad-students/harrison-benjamin.html/" target="_blank">Emory University</a>.My academic foundation was laid with a Bachelor's degree in Economics and Mathematics from the <a href="https://www.ug.edu.gh/" target="_blank"> University of Ghana, Legon</a>. Following this, I pursued a Master's degree in Quantitative Economics through the Erasmus Mundus Joint Degree program <a href="https://master-economics-qem.pantheonsorbonne.fr/" target="_blank"> (EMJDP)</a>, jointly awarded by <a href="https://unive.it/" target="_blank"> Ca'Foscari University of Venice</a> and the <a href="https://uclouvain.be/fr/index.html" target="_blank"> Catholic University of Louvain</a> .</p>
+            
+            <p class = "text-justify small-text"> Before joining Emory, I worked as a Research Assistant at the Venice Center for Economics and Risk Analytics (<a href="https://unive.it/pag/35190/" target="_blank"> VERA</a>) and served as a Teaching Assistant at Ca' Foscari University.</p>
+
+            <p class = "text-justify small-text"> My research focuses on econometrics, time series analysis, Bayesian statistics, financial networks, and causal inference.</p>
+        </div>
+        <div class="profile-section">
+            <img src="images/me.jpg" alt="Benjamin Harrison" class="profile-pic">
+            <div class="address">
+                R. Randall Rollins<br>
+                1516 Clifton Road, NE<br>
+                Atlanta, GA 30322
+            </div>
+            <div class="social-media">
+                <div>
+                    <a href="https://www.linkedin.com/in/benhars/" target="_blank">
+                        <img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo">
+                    </a>
+                    
+                </div>
+                <div>
+                    <a href="https://github.com/benhars" target="_blank">
+                        <img src="images/github_logo2.png" alt="GitHub" width="30" height="30" class="social-media-logo">
+                    </a>
+                    
+                </div>
+                <div>
+                    <a href="mailto:benjamin.harrison@emory.edu" target="_blank">
+                        <img src="images/email_logo2.png" alt="Email" width="30" height="30" class="social-media-logo">
+                    </a>
+                    
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/ben_hars/" target="_blank">
+                        <img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo">
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="very-small-text">&copy; 2024 Benjamin O. Harrison. This website was created with the help of ChatGPT.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function toggleBackground() {
+            const root = document.documentElement;
+            const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
+            if (currentBgColor === '#1a1a1a') {
+                root.style.setProperty('--bg-color-dark', '#ffffff');
+                root.style.setProperty('--text-color-dark', '#000000');
+            } else {
+                root.style.setProperty('--bg-color-dark', '#1a1a1a');
+                root.style.setProperty('--text-color-dark', '#ffffff');
+            }
+            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
+            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
+        }
+    </script>
+</body>
+</html>
