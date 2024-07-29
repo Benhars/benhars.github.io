@@ -9,14 +9,14 @@
     <link rel="icon" type="image/png" href="images/mitad_mundo.png">
     <style>
         :root {
-            --bg-color-dark: #2c2c2e; /* Dark grey background */
-            --bg-color-light: #ffffff; /* White background */
-            --text-color-dark: #ffffff; /* White text color */
-            --text-color-light: #000000; /* Black text color */
+            --bg-color-dark: #2c2c2e;
+            --bg-color-light: #ffffff;
+            --text-color-dark: #ffffff;
+            --text-color-light: #000000;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-color-dark);
             color: var(--text-color-dark);
             transition: background-color 0.3s, color 0.3s;
@@ -64,6 +64,12 @@
             cursor: pointer;
         }
 
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         .container {
             display: flex;
             flex-direction: row;
@@ -71,13 +77,11 @@
             justify-content: center;
             padding: 20px;
             min-height: calc(100vh - 60px);
-            flex-wrap: wrap; /* Ensures content wraps on smaller screens */
         }
 
-        .bio {
+        .bio, .profile-section, .skills {
             max-width: 600px;
-            margin-right: 20px;
-            flex: 1; /* Allows the bio section to take available space */
+            margin: 0 auto;
         }
 
         .bio h2 {
@@ -106,7 +110,6 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            flex: 1; /* Allows the profile section to take available space */
         }
 
         .profile-pic {
@@ -123,8 +126,8 @@
         .social-media {
             display: flex;
             justify-content: center;
-            margin-top: 1rem; /* Increased margin for more space above the icons */
-            gap: 1rem; /* Added gap for spacing between icons */
+            margin-top: 1rem;
+            gap: 1rem;
         }
 
         .social-media-logo {
@@ -135,11 +138,25 @@
             transform: scale(1.5);
         }
 
-        .social-media-caption {
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .very-small-text {
             font-size: 0.85rem;
-            color: #333;
-            text-align: center;
-            margin-top: 0.5rem;
+            color: #666;
         }
     </style>
 </head>
@@ -156,8 +173,34 @@
         </nav>
         <div class="settings" onclick="toggleBackground()">⚙️</div>
     </header>
-    <div class="container">
-        <div class="bio">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="bio fade-in">
             <h2>Biography</h2>
             <p>Benjamin is a second-year PhD in Economics at Emory University, specializing in time series models, Bayesian econometrics, causal inference, and machine learning. His diverse research interests position him at the forefront of innovative economic research.</p>
             <h3>Interests</h3>
@@ -175,49 +218,27 @@
                 Atlanta, GA 30322
             </div>
             <div class="social-media">
-                <div>
-                    <a href="https://www.linkedin.com/in/benhars/" target="_blank">
-                        <img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo">
-                    </a>
-                    <p class="social-media-caption">LinkedIn</p>
-                </div>
-                <div>
-                    <a href="https://github.com/benhars" target="_blank">
-                        <img src="images/github_logo.png" alt="GitHub" width="30" height="30" class="social-media-logo">
-                    </a>
-                    <p class="social-media-caption">GitHub</p>
-                </div>
-                <div>
-                    <a href="mailto:benjamin.harrison@emory.edu" target="_blank">
-                        <img src="images/email_logo.png" alt="Email" width="30" height="30" class="social-media-logo">
-                    </a>
-                    <p class="social-media-caption">Email</p>
-                </div>
-                <div>
-                    <a href="https://www.instagram.com/ben_hars/" target="_blank">
-                        <img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo">
-                    </a>
-                    <p class="social-media-caption">Instagram</p>
-                </div>
+                <a href="mailto:benjamin.harrison@emory.edu" title="E-mail Me"><img src="images/email_icon.png" alt="E-mail" width="30" height="30" class="social-media-logo"></a>
+                <a href="https://github.com/benhars" title="GitHub"><img src="images/github_logo.png" alt="GitHub" width="30" height="30" class="social-media-logo"></a>
+                <a href="https://www.linkedin.com/in/benhars/" title="LinkedIn"><img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo"></a>
+                <a href="https://www.instagram.com/ben_hars?igsh=MTU3anp4NWhxMm42cA%3D%3D&utm_source=qr" title="Instagram"><img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo"></a>
             </div>
         </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        function toggleBackground() {
-            const root = document.documentElement;
-            const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
-            if (currentBgColor === '#2c2c2e') {
-                root.style.setProperty('--bg-color-dark', '#ffffff');
-                root.style.setProperty('--text-color-dark', '#000000');
-            } else {
-                root.style.setProperty('--bg-color-dark', '#2c2c2e');
-                root.style.setProperty('--text-color-dark', '#ffffff');
-            }
-            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
-            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
-        }
-    </script>
-</body>
-</html>
+    <div id="skills" class="container py-5">
+        <h3 class="text-center">Skills</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-lg-2">
+                <img src="images/r_logo.png" alt="R" width="70" height="60" class="skills-logo-r">
+                <p class="skills-caption">R</p>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <img src="images/python_logo.png" alt="Python" width="50" height="50" class="skills-logo-python">
+                <p class="skills-caption">Python</p>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <img src="images/cplusplus_logo.png" alt="C++" width="90" height="65" class="skills-logo-r">
+                <p class="skills-caption-r">C++</p>
+            </div>
+            <div class="col-md-4
