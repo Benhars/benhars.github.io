@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Benjamin Harrison</title>
+    <title>About - Benjamin O. Harrison</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +11,7 @@
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
+            padding: 0;
         }
         header {
             background-color: var(--bg-color);
@@ -42,13 +43,16 @@
         header nav ul li a:hover {
             text-decoration: underline;
         }
+        header .settings {
+            cursor: pointer;
+        }
         .container {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: calc(100vh - 60px);
             padding: 20px;
+            min-height: calc(100vh - 60px);
         }
         .bio {
             max-width: 600px;
@@ -62,12 +66,24 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
         .profile-pic {
-            max-width: 200px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .address {
+            margin-top: 20px;
+            text-align: center;
         }
         .social-icons {
-            margin-top: 20px;
+            margin-top: 10px;
+            text-align: center;
         }
         .social-icons a {
             text-decoration: none;
@@ -79,7 +95,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Benjamin Harrison</div>
+        <div class="logo">Benjamin O. Harrison</div>
         <nav>
             <ul>
                 <li><a href="index.html">About</a></li>
@@ -88,11 +104,20 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="settings" onclick="toggleBackground()">⚙️</div>
     </header>
     <div class="container">
         <div class="bio">
             <h2>Biography</h2>
             <p>Benjamin is a second-year PhD in Economics at Emory University, specializing in time series models, Bayesian econometrics, causal inference, and machine learning. His diverse research interests position him at the forefront of innovative economic research.</p>
+        </div>
+        <div class="profile-section">
+            <img src="images/me.jpg" alt="Benjamin Harrison" class="profile-pic">
+            <div class="address">
+                R. Randall Rollins<br>
+                1516 Clifton Road, NE<br>
+                Atlanta, GA 30322
+            </div>
             <div class="social-icons">
                 <a href="mailto:benjamin.harrison@emory.edu" title="E-mail Me"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/benhars" title="GitHub"><i class="fab fa-github"></i></a>
@@ -100,19 +125,28 @@
                 <a href="https://www.instagram.com/ben_hars?igsh=MTU3anp4NWhxMm42cA%3D%3D&utm_source=qr" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <img src="images/me.jpg" alt="Benjamin Harrison" class="profile-pic">
     </div>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const root = document.documentElement;
         function updateColors() {
             if (darkModeMediaQuery.matches) {
-                document.documentElement.style.setProperty('--bg-color', '#121212');
-                document.documentElement.style.setProperty('--text-color', '#ffffff');
+                root.style.setProperty('--bg-color', '#121212');
+                root.style.setProperty('--text-color', '#ffffff');
             } else {
-                document.documentElement.style.setProperty('--bg-color', '#ffffff');
-                document.documentElement.style.setProperty('--text-color', '#000000');
+                root.style.setProperty('--bg-color', '#ffffff');
+                root.style.setProperty('--text-color', '#000000');
+            }
+        }
+        function toggleBackground() {
+            if (root.style.getPropertyValue('--bg-color') === '#121212') {
+                root.style.setProperty('--bg-color', '#ffffff');
+                root.style.setProperty('--text-color', '#000000');
+            } else {
+                root.style.setProperty('--bg-color', '#121212');
+                root.style.setProperty('--text-color', '#ffffff');
             }
         }
         darkModeMediaQuery.addListener(updateColors);
