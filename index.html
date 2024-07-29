@@ -10,13 +10,44 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+        }
+        header {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+        header nav ul li a:hover {
+            text-decoration: underline;
         }
         .container {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: calc(100vh - 60px);
             padding: 20px;
         }
         .bio {
@@ -47,6 +78,17 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Benjamin Harrison</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <div class="bio">
             <h2>Biography</h2>
@@ -78,4 +120,3 @@
     </script>
 </body>
 </html>
-
