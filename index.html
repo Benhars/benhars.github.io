@@ -34,7 +34,14 @@
             font-weight: bold;
             font-size: 1.05rem;
         }
+        .navbar-toggler {
+            border: none;
+        }
 
+        .navbar-toggler-icon {
+            background-color: var(--text-color-light);
+        }
+        
         .navbar-nav .nav-link {
             color: var(--text-color-dark) !important;
             font-size: 1.1rem;
@@ -145,6 +152,7 @@
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
+            <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
         </div>
     </nav>
     <div class="container">
