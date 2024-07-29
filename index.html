@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> 
     <style>
         :root {
-            --bg-color-dark: #1a1a1a; /* Dark grey background */
+            --bg-color-dark: #1a1a1a; /* Dark background */
             --bg-color-light: #ffffff; /* White background */
             --text-color-dark: #ffffff; /* White text color */
             --text-color-light: #000000; /* Black text color */
@@ -67,13 +67,6 @@
         .social-media-logo:hover {
             transform: scale(1.5);
             filter: grayscale(100%);
-        }
-
-        .social-media-caption {
-            font-size: 0.85rem;
-            color: #0056b3;
-            text-align: center;
-            margin-top: 0.5rem;
         }
 
         .profile-pic {
@@ -231,7 +224,7 @@
         </div>
     </div>
     <footer>
-        <p class="very-small-text">&copy; 2024 Benjamin O. Harrison. All rights reserved.</p>
+        <p class="very-small-text">&copy; 2024 Benjamin O. Harrison. This website was created with the help of ChatGpt.</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -244,7 +237,7 @@
                 root.style.setProperty('--bg-color-dark', '#ffffff');
                 root.style.setProperty('--text-color-dark', '#000000');
             } else {
-                root.style.setProperty('--bg-color-dark', '#2c2c2e');
+                root.style.setProperty('--bg-color-dark', '#1a1a1a');
                 root.style.setProperty('--text-color-dark', '#ffffff');
             }
             document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
