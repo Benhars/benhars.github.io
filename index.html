@@ -79,7 +79,17 @@
             min-height: calc(100vh - 60px);
         }
 
-        .bio, .profile-section, .skills {
+        .bio {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .profile-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .skills {
             max-width: 600px;
             margin: 0 auto;
         }
@@ -138,10 +148,7 @@
             transform: scale(1.5);
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+       
 
         .fade-in {
             animation: fadeIn 2s ease-out forwards;
