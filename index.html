@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-color-dark);
             color: var(--text-color-dark);
             transition: background-color 0.3s, color 0.3s;
@@ -24,44 +24,45 @@
             padding: 0;
         }
 
-        header {
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header .logo {
-            font-size: 1.5em;
+        .navbar-brand {
             font-weight: bold;
+            font-size: 1.05rem;
         }
 
-        header nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
+        .navbar-nav .nav-link {
+            color: var(--text-color-dark) !important;
+            font-size: 1.1rem;
         }
 
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--text-color-dark);
-            font-size: 1.1em;
-        }
-
-        header nav ul li a:hover {
+        .navbar-nav .nav-link:hover {
             text-decoration: underline;
         }
 
-        header .settings {
-            cursor: pointer;
+        .social-media-logo {
+            transition: transform 0.3s;
+        }
+
+        .social-media-logo:hover {
+            transform: scale(1.5);
+        }
+
+        .social-media-caption {
+            font-size: 0.85rem;
+            color: #333;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
         }
 
         .container {
@@ -71,13 +72,13 @@
             justify-content: center;
             padding: 20px;
             min-height: calc(100vh - 60px);
-            flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+            flex-wrap: wrap;
         }
 
         .bio {
             max-width: 600px;
             margin-right: 20px;
-            flex: 1; /* Allows the bio section to take available space */
+            flex: 1;
         }
 
         .bio h2 {
@@ -106,13 +107,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            flex: 1; /* Allows the profile section to take available space */
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
+            flex: 1;
         }
 
         .address {
@@ -120,42 +115,38 @@
             text-align: center;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem; /* Increased margin for more space above the icons */
-            gap: 1rem; /* Added gap for spacing between icons */
-        }
-
-        .social-media-logo {
-            transition: transform 0.3s;
-        }
-
-        .social-media-logo:hover {
-            transform: scale(1.5);
-        }
-
-        .social-media-caption {
-            font-size: 0.85rem;
-            color: #333;
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #343a40;
+            color: #fff;
             text-align: center;
-            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Benjamin O. Harrison</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
-        </nav>
-        <div class="settings" onclick="toggleBackground()">⚙️</div>
-    </header>
+        </div>
+    </nav>
     <div class="container">
         <div class="bio">
             <h2>Biography</h2>
@@ -202,8 +193,12 @@
             </div>
         </div>
     </div>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <footer>
+        <p class="very-small-text">&copy; 2024 Benjamin O. Harrison. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         function toggleBackground() {
             const root = document.documentElement;
