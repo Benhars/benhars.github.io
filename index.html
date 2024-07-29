@@ -33,6 +33,7 @@
         .navbar-brand {
             font-weight: bold;
             font-size: 1.05rem;
+            font-family: 'Garamond', serif;
         }
         .navbar-toggler {
             border: none;
@@ -45,11 +46,16 @@
         .navbar-nav .nav-link {
             color: var(--text-color-dark) !important;
             font-size: 1.1rem;
+            font-family: 'Garamond', serif;
         }
 
         .navbar-nav .nav-link:hover {
             text-decoration: underline;
         }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
 
         .social-media {
             display: flex;
@@ -137,6 +143,7 @@
         .very-small-text {
             font-size: 0.85rem;
             color: #666;
+            font-family: 'Garamond', serif;
         }
 
         .mode-toggle {
@@ -174,14 +181,14 @@
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
-            <button class="mode-toggle" onclick="toggleBackground()">⚙️</button>
+            <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
         </div>
     </nav>
     <div class="container">
         <div class="bio">
             <h2>Biography</h2>
             <p>Benjamin is a second-year PhD in Economics at Emory University, specializing in time series models, Bayesian econometrics, causal inference, and machine learning. His diverse research interests position him at the forefront of innovative economic research.</p>
-            <h3>Interests</h3>
+            <h6>Interests</h6>
             <ul>
                 <li>Econometrics</li>
                 <li>Bayesian Econometrics</li>
@@ -200,25 +207,25 @@
                     <a href="https://www.linkedin.com/in/benhars/" target="_blank">
                         <img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo">
                     </a>
-                    <p class="social-media-caption">LinkedIn</p>
+                    
                 </div>
                 <div>
                     <a href="https://github.com/benhars" target="_blank">
                         <img src="images/github_logo.png" alt="GitHub" width="30" height="30" class="social-media-logo">
                     </a>
-                    <p class="social-media-caption">GitHub</p>
+                    
                 </div>
                 <div>
                     <a href="mailto:benjamin.harrison@emory.edu" target="_blank">
                         <img src="images/email_logo2.png" alt="Email" width="30" height="30" class="social-media-logo">
                     </a>
-                    <p class="social-media-caption">Email</p>
+                    
                 </div>
                 <div>
                     <a href="https://www.instagram.com/ben_hars/" target="_blank">
                         <img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo">
                     </a>
-                    <p class="social-media-caption">Instagram</p>
+                   
                 </div>
             </div>
         </div>
@@ -233,7 +240,7 @@
         function toggleBackground() {
             const root = document.documentElement;
             const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
-            if (currentBgColor === '#2c2c2e') {
+            if (currentBgColor === '#1a1a1a') {
                 root.style.setProperty('--bg-color-dark', '#ffffff');
                 root.style.setProperty('--text-color-dark', '#000000');
             } else {
