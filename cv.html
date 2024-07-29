@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,26 +15,31 @@
       gtag('config', 'G-H83C2D3SXR');
     </script>
     <style>
-        :root {
-            --bg-color-dark: #1a1a1a; /* Dark background */
-            --bg-color-light: #ffffff; /* White background */
-            --text-color-dark: #ffffff; /* White text color */
-            --text-color-light: #000000; /* Black text color */
+       :root {
+            --bg-color-dark: #1a1a1a;
+            --bg-color-light: #ffffff;
+            --text-color-dark: #ffffff;
+            --text-color-light: #000000;
+            --navbar-footer-bg-dark: #ffffff;
+            --navbar-footer-bg-light: #1a1a1a;
+            --highlight-color: #007bff;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color-light);
-            color: var(--text-color-light);
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
+            font-size: 12px;
         }
 
         .navbar {
             position: sticky;
             top: 0;
-            z-index: 1000; 
+            z-index: 1000;
+            background-color: var(--navbar-footer-bg-dark);
         }
 
         .navbar-brand {
@@ -43,11 +49,48 @@
         }
 
         .navbar-toggler {
-            border: none;
+            border: 1px solid var(--text-color-light); /* Adds a border */
+            padding: 5px; /* Adds padding inside the button */
+            margin: 10px; /* Adds margin outside the button */
+            background-color: var(--navbar-footer-bg-dark); /* Sets the background color */
+            position: relative; /* Necessary for positioning the lines */
         }
 
         .navbar-toggler-icon {
-            background-color: var(--text-color-light);
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--bg-color-dark);
+            position: relative; /* Necessary for positioning the lines */
+            transition: all 0.3s; /* Adds a smooth transition */
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color-light); /* Sets the line color */
+            position: absolute;
+            transition: all 0.3s; /* Adds a smooth transition */
+        }
+
+        .navbar-toggler-icon::before {
+            top: -8px; /* Positions the first line above the middle line */
+        }
+
+        .navbar-toggler-icon::after {
+            top: 8px; /* Positions the third line below the middle line */
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-color-light) !important;
+            font-size: 1.1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -91,13 +134,17 @@
         footer {
             margin-top: 50px;
             padding: 20px 0;
-            background-color: #343a40;
-            color: #fff;
+            background-color: var(--navbar-footer-bg-dark);
+            color: var(--text-color-dark);
+            text-align: center;
+            font-size: 0.85rem;
+            font-family: 'Garamond', serif;
         }
 
         .very-small-text {
             font-size: 0.85rem;
-            color: #666;
+            color: #007bff;
+            font-family: 'Garamond', serif;
         }
 
         .mode-toggle {
@@ -112,32 +159,38 @@
         .mode-toggle:hover {
             color: var(--text-color-dark);
         }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">CV</a>
-                    </li>
-                </ul>
-                <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
-            </div>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
         </div>
     </nav>
     <div class="py-5">
@@ -155,19 +208,23 @@
         function toggleBackground() {
             const root = document.documentElement;
             const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
-            if (currentBgColor === '#2c2c2e') {
+            if (currentBgColor === '#1a1a1a') {
                 root.style.setProperty('--bg-color-dark', '#ffffff');
                 root.style.setProperty('--text-color-dark', '#000000');
-                document.body.style.backgroundColor = '#ffffff';
-                document.body.style.color = '#000000';
-                document.querySelector('.mode-toggle').textContent = '🌙'; // Dark mode icon
+                root.style.setProperty('--navbar-footer-bg-dark', '#1a1a1a');
+                root.style.setProperty('--text-color-light', '#ffffff');
             } else {
-                root.style.setProperty('--bg-color-dark', '#2c2c2e');
+                root.style.setProperty('--bg-color-dark', '#1a1a1a');
                 root.style.setProperty('--text-color-dark', '#ffffff');
-                document.body.style.backgroundColor = '#2c2c2e';
-                document.body.style.color = '#ffffff';
-                document.querySelector('.mode-toggle').textContent = '🌕'; // Light mode icon
+                root.style.setProperty('--navbar-footer-bg-dark', '#ffffff');
+                root.style.setProperty('--text-color-light', '#000000');
             }
+            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
+            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
+            document.querySelector('.navbar').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
+            document.querySelector('footer').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
+            document.querySelectorAll('.nav-link').forEach(link => link.style.color = root.style.getPropertyValue('--text-color-light'));
+            document.querySelector('.mode-toggle').style.color = root.style.getPropertyValue('--text-color-light');
         }
     </script>
 </body>
