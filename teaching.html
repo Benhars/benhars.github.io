@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching - Benjamin O. Harrison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Garamond:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-dark: #1a1a1a;
+            --bg-color-light: #ffffff;
+            --text-color-dark: #ffffff;
+            --text-color-light: #000000;
+            --navbar-footer-bg-dark: #ffffff;
+            --navbar-footer-bg-light: #1a1a1a;
+            --highlight-color: #007bff;
+            --course-block-bg-dark: #333333;
+            --course-block-bg-light: #ffffff;
+        }
 
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+            font-size: 12px; /* Increased base font size */
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--navbar-footer-bg-dark);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.05rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .navbar-toggler {
+            border: 1px solid var(--text-color-light); /* Adds a border */
+            padding: 5px; /* Adds padding inside the button */
+            margin: 10px; /* Adds margin outside the button */
+            background-color: var(--navbar-footer-bg-dark); /* Sets the background color */
+            position: relative; /* Necessary for positioning the lines */
+        }
+
+        .navbar-toggler-icon {
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--bg-color-dark);
+            position: relative; /* Necessary for positioning the lines */
+            transition: all 0.3s; /* Adds a smooth transition */
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color-light);
+            position: absolute;
+            transition: all 0.3s;
+        }
+
+        .navbar-toggler-icon::before {
+            top: -8px;
+        }
+
+        .navbar-toggler-icon::after {
+            top: 8px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-color-light) !important;
+            font-size: 1.1rem;
+            font-family: 'Garamond', serif;
+        }
+
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: calc(100vh - 60px);
+        }
+
+        .course-block {
+            background-color: var(--course-block-bg-light);
+            color: var(--text-color-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 10px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .course-block:hover {
+            transform: scale(1.02);
+        }
+
+        .course-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            color: var(--highlight-color);
+        }
+
+        .course-subheader {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .course-body {
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        footer {
+            padding: 20px 0;
+            background-color: var(--navbar-footer-bg-dark);
+            color: var(--text-color-dark);
+            text-align: center;
+        }
+
+        .very-small-text {
+            font-size: 0.85rem;
+            color: var(--highlight-color);
+            font-family: 'Garamond', serif;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            color: var(--text-color-light);
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        .mode-toggle:hover {
+            color: var(--text-color-dark);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Benjamin O. Harrison</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="teaching.html">Teaching</a>
+                </li>
+            </ul>
+            <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="course-block">
+            <div class="course-header">Microeconomics 1: Ca'Foscari University</div>
+            <div class="course-subheader">Teaching Assistant: Fall 2022</div>
+            <div class="course-body">
+                <p>This is a microeconomics course at the master's level in the Quantitative economics master's program.</p>
+            </div>
+        </div>
+        <div class="course-block">
+            <div class="course-header">International Economics: University of Ghana.</div>
+            <div class="course-subheader">Teaching Assistant: Fall 2020</div>
+            <div class="course-body">
+                <p>This is an undergraduate introductory course to international economics.</p>
+            </div>
+        </div>
+        <!-- Add more course blocks as needed -->
+    </div>
+    <footer>
+        <p class="very-small-text">&copy; 2024 Benjamin O. Harrison. This website was created with the help of ChatGPT.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function toggleBackground() {
+            const root = document.documentElement;
+            const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
+            if (currentBgColor === '#1a1a1a') {
+                root.style.setProperty('--bg-color-dark', '#ffffff');
+                root.style.setProperty('--text-color-dark', '#000000');
+                root.style.setProperty('--navbar-footer-bg-dark', '#1a1a1a');
+                root.style.setProperty('--text-color-light', '#ffffff');
+                root.style.setProperty('--course-block-bg-dark', '#333333');
+            } else {
+                root.style.setProperty('--bg-color-dark', '#1a1a1a');
+                root.style.setProperty('--text-color-dark', '#000000');
+                root.style.setProperty('--navbar-footer-bg-dark', '#ffffff');
+                root.style.setProperty('--text-color-light', '#000000');
+                root.style.setProperty('--course-block-bg-dark', '#ffffff');
+            }
+            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
+            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
+            document.querySelector('.navbar').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
+            document.querySelector('footer').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
+            document.querySelectorAll('.nav-link').forEach(link => link.style.color = root.style.getPropertyValue('--text-color-light'));
+            document.querySelector('.mode-toggle').style.color = root.style.getPropertyValue('--text-color-light');
+            document.querySelectorAll('.course-block').forEach(block => {
+                block.style.backgroundColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim() === '#1a1a1a'
+                    ? root.style.getPropertyValue('--course-block-bg-light')
+                    : root.style.getPropertyValue('--course-block-bg-dark');
+                block.style.color = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim() === '#1a1a1a'
+                    ? root.style.getPropertyValue('--text-color-dark')
+                    : root.style.getPropertyValue('--text-color-light');
+            });
+        }
+    </script>
+</body>
+</html>
