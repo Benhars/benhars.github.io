@@ -24,7 +24,7 @@
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
-            font-size: 12px; /* Increased base font size */
+            font-size: 12px;
         }
 
         .navbar {
@@ -39,12 +39,13 @@
             font-size: 1.05rem;
             font-family: 'Garamond', serif;
         }
+
         .navbar-toggler {
-            border: 1px solid var(--text-color-light); /* Adds a border */
-            padding: 5px; /* Adds padding inside the button */
-            margin: 10px; /* Adds margin outside the button */
-            background-color: var(--navbar-footer-bg-dark); /* Sets the background color */
-            position: relative; /* Necessary for positioning the lines */
+            border: 1px solid var(--text-color-light);
+            padding: 5px;
+            margin: 10px;
+            background-color: var(--navbar-footer-bg-dark);
+            position: relative;
         }
 
         .navbar-toggler-icon {
@@ -52,8 +53,8 @@
             width: 24px;
             height: 2px;
             background-color: var(--bg-color-dark);
-            position: relative; /* Necessary for positioning the lines */
-            transition: all 0.3s; /* Adds a smooth transition */
+            position: relative;
+            transition: all 0.3s;
         }
 
         .navbar-toggler-icon::before,
@@ -62,19 +63,19 @@
             display: block;
             width: 24px;
             height: 2px;
-            background-color: var(--text-color-light); /* Sets the line color */
+            background-color: var(--text-color-light);
             position: absolute;
-            transition: all 0.3s; /* Adds a smooth transition */
+            transition: all 0.3s;
         }
 
         .navbar-toggler-icon::before {
-            top: -8px; /* Positions the first line above the middle line */
+            top: -8px;
         }
 
         .navbar-toggler-icon::after {
-            top: 8px; /* Positions the third line below the middle line */
+            top: 8px;
         }
-        
+
         .navbar-nav .nav-link {
             color: var(--text-color-light) !important;
             font-size: 1.1rem;
@@ -85,12 +86,11 @@
             text-decoration: underline;
         }
 
-
         .social-media {
             display: flex;
             justify-content: center;
-            margin-top: 1rem; /* Increased margin for more space above the icons */
-            gap: 1rem; /* Added gap for spacing between icons */
+            margin-top: 1rem;
+            gap: 1rem;
         }
 
         .social-media-logo {
@@ -175,6 +175,7 @@
             color: #007bff;
             font-family: 'Garamond', serif;
         }
+
         .small-text {
             font-size: 1.2rem;
         }
@@ -191,12 +192,26 @@
         .mode-toggle:hover {
             color: var(--text-color-dark);
         }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
             }
             100% {
                 opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bio {
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -219,7 +234,7 @@
                     <a class="nav-link" href="cv.html">CV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="teaching.html">teaching</a>
+                    <a class="nav-link" href="teaching.html">Teaching</a>
                 </li>
             </ul>
             <button class="mode-toggle" onclick="toggleBackground()">🌙</button>
@@ -228,11 +243,11 @@
     <div class="container">
         <div class="bio">
             <h3>Benjamin Owusu Harrison</h3>
-            <p class = "text-justify small-text">I am a second-year PhD in Economics at <a href="https://economics.emory.edu/people/grad-students/harrison-benjamin.html/" target="_blank">Emory University</a>.My academic foundation was laid with a Bachelor's degree in Economics and Mathematics from the <a href="https://www.ug.edu.gh/" target="_blank"> University of Ghana, Legon</a>. Following this, I pursued a Master's degree in Quantitative Economics through the Erasmus Mundus Joint Degree program <a href="https://master-economics-qem.pantheonsorbonne.fr/" target="_blank"> (EMJDP)</a>, jointly awarded by <a href="https://unive.it/" target="_blank"> Ca'Foscari University of Venice</a> and the <a href="https://uclouvain.be/fr/index.html" target="_blank"> Catholic University of Louvain</a> .</p>
+            <p class="text-justify small-text">I am a second-year PhD in Economics at <a href="https://economics.emory.edu/people/grad-students/harrison-benjamin.html/" target="_blank">Emory University</a>. My academic foundation was laid with a Bachelor's degree in Economics and Mathematics from the <a href="https://www.ug.edu.gh/" target="_blank">University of Ghana, Legon</a>. Following this, I pursued a Master's degree in Quantitative Economics through the Erasmus Mundus Joint Degree program <a href="https://master-economics-qem.pantheonsorbonne.fr/" target="_blank">(EMJDP)</a>, jointly awarded by <a href="https://unive.it/" target="_blank">Ca'Foscari University of Venice</a> and the <a href="https://uclouvain.be/fr/index.html" target="_blank">Catholic University of Louvain</a>.</p>
             
-            <p class = "text-justify small-text"> Before joining Emory, I worked as a Research Assistant at the Venice Center for Economics and Risk Analytics (<a href="https://unive.it/pag/35190/" target="_blank"> VERA</a>) and served as a Teaching Assistant at Ca' Foscari University.</p>
+            <p class="text-justify small-text">Before joining Emory, I worked as a Research Assistant at the Venice Center for Economics and Risk Analytics (<a href="https://unive.it/pag/35190/" target="_blank">VERA</a>) and served as a Teaching Assistant at Ca' Foscari University.</p>
 
-            <p class = "text-justify small-text"> My research focuses on econometrics, time series analysis, Bayesian statistics, financial networks, and causal inference.</p>
+            <p class="text-justify small-text">My research focuses on econometrics, time series analysis, Bayesian statistics, financial networks, and causal inference.</p>
         </div>
         <div class="profile-section">
             <img src="images/me.jpg" alt="Benjamin Harrison" class="profile-pic">
@@ -246,25 +261,21 @@
                     <a href="https://www.linkedin.com/in/benhars/" target="_blank">
                         <img src="images/linkedin_logo.png" alt="LinkedIn" width="30" height="30" class="social-media-logo">
                     </a>
-                    
                 </div>
                 <div>
                     <a href="https://github.com/benhars" target="_blank">
                         <img src="images/github_logo2.png" alt="GitHub" width="30" height="30" class="social-media-logo">
                     </a>
-                    
                 </div>
                 <div>
                     <a href="mailto:benjamin.harrison@emory.edu" target="_blank">
                         <img src="images/email_logo2.png" alt="Email" width="30" height="30" class="social-media-logo">
                     </a>
-                    
                 </div>
                 <div>
                     <a href="https://www.instagram.com/ben_hars/" target="_blank">
                         <img src="images/instagram_logo.png" alt="Instagram" width="30" height="30" class="social-media-logo">
                     </a>
-                   
                 </div>
             </div>
         </div>
