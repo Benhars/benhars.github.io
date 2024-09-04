@@ -18,19 +18,24 @@
     </script>
     <style>
         :root {
-            --bg-color-dark: #1a1a1a;
+
+            --bg-color: #ffffff; /* Default light background */
+            --text-color: #000000; /* Default light text */
+            --navbar-footer-bg: #ffffff; /* Default light navbar/footer */
+            --highlight-color: #007bff; /* Optional highlight color */
+           /* --bg-color-dark: #1a1a1a;
             --bg-color-light: #ffffff;
             --text-color-dark: #ffffff;
             --text-color-light: #000000;
             --navbar-footer-bg-dark: #ffffff;
             --navbar-footer-bg-light: #1a1a1a;
-            --highlight-color: #007bff;
+            --highlight-color: #007bff;*/
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-dark);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
@@ -41,7 +46,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: var(--navbar-footer-bg-dark);
+            background-color: var(--navbar-footer-bg);
         }
 
         .navbar-brand {
@@ -51,10 +56,10 @@
         }
 
         .navbar-toggler {
-            border: 1px solid var(--text-color-light);
+            border: 1px solid var(--text-color);
             padding: 5px;
             margin: 10px;
-            background-color: var(--navbar-footer-bg-dark);
+            background-color: var(--navbar-footer-bg);
             position: relative;
         }
 
@@ -62,7 +67,7 @@
             display: inline-block;
             width: 24px;
             height: 2px;
-            background-color: var(--bg-color-dark);
+            background-color: var(--bg-color);
             position: relative;
             transition: all 0.3s;
         }
@@ -73,7 +78,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background-color: var(--text-color-light);
+            background-color: var(--text-color);
             position: absolute;
             transition: all 0.3s;
         }
@@ -87,7 +92,7 @@
         }
 
         .navbar-nav .nav-link {
-            color: var(--text-color-light) !important;
+            color: var(--text-color) !important;
             font-size: 1.1rem;
             font-family: 'Garamond', serif;
         }
@@ -192,7 +197,7 @@
 
         .mode-toggle {
             cursor: pointer;
-            color: var(--text-color-light);
+            color: var(--text-color);
             background: none;
             border: none;
             font-size: 1.2rem;
@@ -200,7 +205,7 @@
         }
 
         .mode-toggle:hover {
-            color: var(--text-color-dark);
+            color: var(--text-color);
         }
 
         @keyframes fadeIn {
@@ -300,23 +305,22 @@
         function toggleBackground() {
             const root = document.documentElement;
             const currentBgColor = getComputedStyle(root).getPropertyValue('--bg-color-dark').trim();
-            if (currentBgColor === '#1a1a1a') {
-                root.style.setProperty('--bg-color-dark', '#ffffff');
-                root.style.setProperty('--text-color-dark', '#000000');
-                root.style.setProperty('--navbar-footer-bg-dark', '#1a1a1a');
-                root.style.setProperty('--text-color-light', '#ffffff');
-            } else {
-                root.style.setProperty('--bg-color-dark', '#1a1a1a');
-                root.style.setProperty('--text-color-dark', '#ffffff');
-                root.style.setProperty('--navbar-footer-bg-dark', '#ffffff');
-                root.style.setProperty('--text-color-light', '#000000');
-            }
-            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color-dark');
-            document.body.style.color = root.style.getPropertyValue('--text-color-dark');
-            document.querySelector('.navbar').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
-            document.querySelector('footer').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg-dark');
-            document.querySelectorAll('.nav-link').forEach(link => link.style.color = root.style.getPropertyValue('--text-color-light'));
-            document.querySelector('.mode-toggle').style.color = root.style.getPropertyValue('--text-color-light');
+            if (currentBgColor === '#ffffff') {// If background is white, switch to dark mode
+            root.style.setProperty('--bg-color', '#1a1a1a');
+            root.style.setProperty('--text-color', '#ffffff');
+            root.style.setProperty('--navbar-footer-bg', '#1a1a1a');
+           } else {  // If background is dark, switch to light mode
+            root.style.setProperty('--bg-color', '#ffffff');
+            root.style.setProperty('--text-color', '#000000');
+            root.style.setProperty('--navbar-footer-bg', '#ffffff');
+        }
+            // Apply the changes to body and other elements
+            document.body.style.backgroundColor = root.style.getPropertyValue('--bg-color');
+            document.body.style.color = root.style.getPropertyValue('--text-color');
+            document.querySelector('.navbar').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg');
+            document.querySelector('footer').style.backgroundColor = root.style.getPropertyValue('--navbar-footer-bg');
+            document.querySelectorAll('.nav-link').forEach(link => link.style.color = root.style.getPropertyValue('--text-color'));
+            document.querySelector('.mode-toggle').style.color = root.style.getPropertyValue('--text-color');
         }
     </script>
 </body>
