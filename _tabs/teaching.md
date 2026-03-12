@@ -38,7 +38,7 @@ title: Teaching
 
 - **Microeconomics 1** — Ca'Foscari University of Venice
   - Teaching Assistant · Fall 2022
-  - Master's-level microeconomics course in the Quantitative Economics program.
+  - Master 's-level microeconomics course in the Quantitative Economics program.
 
 - **International Economics** — University of Ghana
   - Teaching Assistant · Fall 2020
