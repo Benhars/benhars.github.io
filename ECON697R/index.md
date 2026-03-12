@@ -75,4 +75,4 @@ This reading study session explores the theoretical foundations, methodological 
 - Pearl, J. (2009). *Causality*. Cambridge University Press.
 
 ## Acknowledgments
-I thank Prof.[David Jacho-Chávez](https://www.davidjachochavez.org/){:target="_blank"}for his guidance and for serving as Faculty Sponsor in developing this course.
+I thank Prof. [David Jacho-Chávez](https://www.davidjachochavez.org/){:target="_blank"} for his guidance and for serving as Faculty Sponsor in developing this course.
