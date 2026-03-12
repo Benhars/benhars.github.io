@@ -10,9 +10,18 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/benhars/"
+
+- type: orcid
+  icon: "fab fa-orcid"
+  url: "https://orcid.org/0009-0004-1107-4870"
+  
+# - type: rss
+#  icon: "fas fa-rss"
+#  noblank: true
+
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
