@@ -1,75 +1,20 @@
 ---
 layout: page
-title: Advanced Studies in Counterfactual Analysis
+title: Modules
 ---
 
-**ECON 697R · Emory University, Spring 2025**
+[← Back to Course Page](/ECON697R/)
 
-[**Modules**](/ECON697R/modules/){: style="font-size: 1.1em;"}
+# Modules
 
----
+> The content presented herein primarily comprises a condensed review of the material mentioned in [References](/ECON697R/#references). These notes are crafted to serve as supplementary materials for self-directed learning purposes. It is crucial to note that this compilation is not designed to substitute any existing text or course materials. Its intent is solely to provide additional support for individual learning journeys. All errors are my responsibility.
 
-## About
+### Slides 📂
 
-This Directed Study is designed to be an intensive reading in econometrics on a topic not covered in a regular course at Emory University. This course explores a variety of topics in counterfactual analysis with applications in causal inference literature. The course is based on student presentations and discussions among participants (students and faculty invited).
-
-## Course Description
-
-This reading study session explores the theoretical foundations, methodological advancements, and practical applications of counterfactual analysis in causal inference in depth. The course builds from the basic principles to advanced topics, incorporating sensitivity analyses, handling nonstationary data, and implementing counterfactual models.
-
-## Content
-
-### Topic 1: The Journey of Counterfactual Analysis
-
-- Conceptual basis of causality from structural and potential outcomes traditions
-- Perspectives of Pearl (2009) and Imbens and Rubin (2015)
-- The role of thought experiments in econometric causality
-- The problem of missing counterfactuals, selection bias, and confounding
-- Broad overview of major causal inference designs
-
-### Topic 2: From Causal Inference to Dynamic Systems and an Introduction to Synthetic Control
-
-- Potential-outcomes framework for dynamic systems
-- Dynamic causal effects and impulse response functions
-- Conditions under which these objects admit a causal interpretation
-- Synthetic control methods for aggregate interventions with limited overlap
-- Basic setup, estimation, empirical implementation, and placebo-based inference
-
-### Topic 3: Counterfactual Imputation under Predictable Errors
-
-- Limitations of traditional SCM: poor pre-treatment fit, overfitting, nonstationarity, dependence
-- The Artificial Counterfactual (ArCo) estimator for high-dimensional panel time-series data
-- Predictable imputation errors: serial correlation, cross-sectional dependence, model misspecification
-- Practical Unbiased Predictors (PUP/PLUP) for correcting nonspherical error structures
-- Comparisons to FarmTreat, ArCo, and extensions based on VAR and factor-augmented models
-
-### Topic 4: Research Proposal — Extending Synthetic Control to Dynamic Treatment Effects
-
-- Limitations of traditional SCM for estimating dynamic causal effects of one-time interventions
-- Panel-data framework for estimating how effects of a one-time shock propagate over time
-- Identification through counterfactual imputation
-- Two-stage estimation strategy with latent factors and autoregressive dynamics
-- Consistency and asymptotic normality under iid and correlated error structures
-- Empirical motivation from natural disasters and macroeconomic stimulus shocks
-
-### Topic 5: Difference-in-Differences with Multiple Time Periods
-
-- Canonical 2 × 2 DiD framework: potential outcomes, no-anticipation, and parallel trends
-- Event-study and staggered-adoption designs
-- Limitations of two-way fixed effects estimators under heterogeneous treatment effects
-- Callaway and Sant'Anna framework: group-time average treatment effects ATT(g, t)
-- Identification under alternative comparison groups, role of covariates
-- Aggregation schemes, estimation, and inference
-
-## References
-
-- Abadie, A. & Gardeazabal, J. (2003). The economic costs of conflict: A case study of the Basque Country. *American Economic Review*, 93(1), 113–132.
-- Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies. *JASA*, 105(490), 493–505.
-- Angrist, J. D., Jordà, Ò., & Kuersteiner, G. M. (2018). Semiparametric estimates of monetary policy effects: String theory revisited. *JBES*, 36(3), 371–387.
-- Ballinari, D. & Wehrli, A. (2024). Semiparametric inference for impulse response functions using double/debiased machine learning. *arXiv:2411.10009*.
-- Gonçalves, S. & Ng, S. (2024). Imputation of counterfactual outcomes when the errors are predictable: Rejoinder. *JBES*, 42(4), 1140–1142.
-- Heckman, J. & Pinto, R. (2024). Econometric causality: The central role of thought experiments. *Journal of Econometrics*, 105719.
-- Imbens, G. W. & Rubin, D. B. (2015). *Causal Inference in Statistics, Social, and Biomedical Sciences*. Cambridge University Press.
-- McDonald, R. P. (2002). Review of Pearl's *Causality*. *Psychometrika*, 67(2), 321–322.
-- Medeiros, M. C. (2024). Counterfactual imputation. *JBES*, 42(4), 1128–1132.
-- Pearl, J. (2009). *Causality*. Cambridge University Press.
+| Date | | Topic |
+|:---|:---|:---|
+| 09 Feb, 2025 | <span style="background-color: #7c4dff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">TOPIC 01</span> | [The Journey of Counterfactual Analysis](/assets/slides/ECON697R/topic01.pdf){:target="_blank"} |
+| 23 Feb, 2025 | <span style="background-color: #7c4dff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">TOPIC 02</span> | [From Causal Inference to Dynamic Systems and Synthetic Control](/assets/slides/ECON697R/topic02.pdf){:target="_blank"} |
+| 09 Mar, 2025 | <span style="background-color: #7c4dff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">TOPIC 03</span> | [Counterfactual Imputation under Predictable Errors](/assets/slides/ECON697R/topic03.pdf){:target="_blank"} |
+| 06 Apr, 2025 | <span style="background-color: #7c4dff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">TOPIC 04</span> | [Extending Synthetic Control to Dynamic Treatment Effects](/assets/slides/ECON697R/topic04.pdf){:target="_blank"} |
+| 20 Apr, 2025 | <span style="background-color: #7c4dff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">TOPIC 05</span> | [Difference-in-Differences with Multiple Time Periods](/assets/slides/ECON697R/topic05.pdf){:target="_blank"} |
