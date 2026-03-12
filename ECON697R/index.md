@@ -73,3 +73,6 @@ This reading study session explores the theoretical foundations, methodological 
 - McDonald, R. P. (2002). Review of Pearl's *Causality*. *Psychometrika*, 67(2), 321–322.
 - Medeiros, M. C. (2024). Counterfactual imputation. *JBES*, 42(4), 1128–1132.
 - Pearl, J. (2009). *Causality*. Cambridge University Press.
+
+## Acknowledgments
+I thank Prof.[David Jacho-Chávez](https://www.davidjachochavez.org/){:target="_blank"}for his guidance and for serving as Faculty Sponsor in developing this course.
