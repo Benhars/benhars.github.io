@@ -7,7 +7,7 @@ title: CV
 
 You can download my CV below:
 
-<a href="/assets/pdf/CV.pdf" target="_blank"><i class="fas fa-download"></i> Download CV (PDF)</a>
+<a href="/assets/pdf/cv.pdf" target="_blank"><i class="fas fa-download"></i> Download CV (PDF)</a>
 
-<iframe src="/assets/pdf/CV.pdf" width="100%" height="800px" style="border: none; margin-top: 1rem;"></iframe>
+<iframe src="/assets/pdf/cv.pdf" width="100%" height="800px" style="border: none; margin-top: 1rem;"></iframe>
 
